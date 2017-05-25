@@ -1,0 +1,36 @@
+    #include<stdio.h>
+    #include<stdlib.h>
+    #include<limits.h>
+     
+    inline int input(){
+        char c = getchar_unlocked();
+        int inp = 0;
+        while(c < 33)
+            c = getchar_unlocked();
+        while(c > 33){
+            inp = inp*10 + c - '0';
+            c = getchar_unlocked();
+        }
+        return inp;
+    }
+     
+    int main(){
+        int t;
+        t = input();
+        while(t--){
+            int n;
+            n = input();
+            int count = 1;
+            int speed = input();
+            int max = speed, i;
+            for(i = 1; i < n; ++i){
+                speed = input();
+                if(max >= speed){
+                    max = speed;
+                    count++;
+                }
+            }
+            printf("%d\n", count);
+        }
+        return 0;
+    } 
